@@ -116,8 +116,8 @@ config LDO_BYPASS_CHECK
 	default y if !MX6SLL
 	help
 	  This feature searches the gpc node in loaded DTB and checking the
-	  "fsl,ldo-bypass" property. When the property is set, board relevant 
-	  PMIC settings are called to adjust for LDO bypass. 
+	  "fsl,ldo-bypass" property. When the property is set, board relevant
+	  PMIC settings are called to adjust for LDO bypass.
 
 config CMD_BEE
 	bool "Enable commands for Bus Encryption Engine(BEE)"
@@ -579,6 +579,17 @@ config TARGET_MX6ULL_14X14_EVK
 	select OF_SYSTEM_SETUP
 	imply CMD_DM
 
+config TARGET_MX6ULL_14X14_ALPHA
+	bool "Support mx6ull_14x14_alpha"
+	depends on MX6ULL
+	select BOARD_LATE_INIT
+	select DM
+	select DM_THERMAL
+	select IOMUX_LPSR
+	select IMX_MODULE_FUSE
+	select OF_SYSTEM_SETUP
+	imply CMD_DM
+
 config TARGET_MX6ULZ_SMM_M2
 	bool "Support imx6ulz_smm_m2"
 	depends on MX6ULL
@@ -805,6 +816,7 @@ endchoice
 config SYS_SOC
 	default "mx6"
 
+source "board/alpha/mx6ullalpha/Kconfig"
 source "board/ge/bx50v3/Kconfig"
 source "board/ge/b1x5v2/Kconfig"
 source "board/aristainetos/Kconfig"

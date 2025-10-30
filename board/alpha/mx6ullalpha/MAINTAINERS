@@ -1,0 +1,6 @@
+MX6ULLEVK BOARD
+M:	Peng Fan <peng.fan@nxp.com>
+S:	Maintained
+F:	board/alpha/mx6ullalpha/
+F:	include/configs/mx6ullalpha.h
+F:	configs/mx6ull_14x14_alpha_emmc_defconfig
