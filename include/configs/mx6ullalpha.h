@@ -43,8 +43,6 @@
 	"initrd_high=0xffffffff\0" \
 	"fdt_file=imx6ull-14x14-alpha-emmc.dtb\0" \
 	"fdt_addr=0x83000000\0" \
-	"tee_addr=0x84000000\0" \
-	"tee_file=undefined\0" \
 	"boot_fdt=try\0" \
 	"ip_dyn=yes\0" \
 	"splashimage=0x8c000000\0" \
@@ -60,7 +58,6 @@
 		"source\0" \
 	"loadimage=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image}\0" \
 	"loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}\0" \
-	"loadtee=fatload mmc ${mmcdev}:${mmcpart} ${tee_addr} ${tee_file}\0" \
 	"mmcboot=echo Booting from mmc ...; " \
 		"run mmcargs; " \
 		"if test ${boot_fdt} = yes || test ${boot_fdt} = try; then " \
