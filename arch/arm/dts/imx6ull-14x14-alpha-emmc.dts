@@ -11,6 +11,14 @@
 / {
 	model = "i.MX6 ULL 14x14 ALPHA Board";
 	compatible = "alpha,imx6ull-14x14-alpha-emmc", "fsl,imx6ull-14x14-evk", "fsl,imx6ull";
+
+	backlight {
+		compatible = "pwm-backlight";
+		pwms = <&pwm1 0 500000>;
+		brightness-levels = <0 4 8 16 32 64 128 255>;
+		default-brightness-level = <6>;
+		status = "okay";
+	};
 };
 
 &clks {

@@ -5,8 +5,8 @@
  *
  * Configuration settings for the Freescale i.MX6UL 14x14 EVK board.
  */
-#ifndef __MX6ULLEVK_CONFIG_H
-#define __MX6ULLEVK_CONFIG_H
+#ifndef __MX6ULL_ALPHA_CONFIG_H
+#define __MX6ULL_ALPHA_CONFIG_H
 
 
 #include <asm/arch/imx-regs.h>

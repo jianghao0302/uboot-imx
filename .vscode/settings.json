@@ -528,7 +528,8 @@
 		"*.dts": "c",
 		"*.dtsi": "c",
 		"*.S": "asm",
-		"*.asm": "asm"
+		"*.asm": "asm",
+		"imx6ull-pinfunc.h": "c"
 	},
 	"search.followSymlinks": false,
 	"terminal.integrated.defaultProfile.linux": "bash",
