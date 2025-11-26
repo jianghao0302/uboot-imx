@@ -31,8 +31,6 @@
 	"emmc_dev=1\0"\
 	"emmc_ack=1\0"\
 	"sd_dev=1\0" \
-	"\0"\
-
 
 #define CFG_EXTRA_ENV_SETTINGS \
 	CFG_MFG_ENV_SETTINGS \

@@ -1,3 +1,11 @@
+/*
+ * @Author: jianghao0302 312143663@qq.com
+ * @Date: 2025-11-26 18:54:45
+ * @LastEditors: jianghao0302 312143663@qq.com
+ * @LastEditTime: 2025-11-26 22:23:44
+ * @FilePath: /uboot-imx/arch/arm/dts/imx6ull-14x14-alpha-emmc.dts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // SPDX-License-Identifier: (GPL-2.0 OR MIT)
 //
 // Copyright (C) 2016 Freescale Semiconductor, Inc.
@@ -22,13 +30,12 @@
 
 	leds {
 		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_gpio_leds>;
 
-		user-led {
-			label = "User";
-			pinctrl-names = "default";
-			pinctrl-0 = <&pinctrl_led>;
+		led1 {
+			label = "red";
 			gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "heartbeat";
 			default-state = "on";
 		};
 	};
