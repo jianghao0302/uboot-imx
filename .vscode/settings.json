@@ -530,7 +530,8 @@
 		"*.S": "asm",
 		"*.asm": "asm",
 		"imx6ull-pinfunc.h": "c",
-		"chrono": "c"
+		"chrono": "c",
+		"dt-structs.h": "c"
 	},
 	"search.followSymlinks": false,
 	"terminal.integrated.defaultProfile.linux": "bash",
