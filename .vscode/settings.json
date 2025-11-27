@@ -531,7 +531,16 @@
 		"*.asm": "asm",
 		"imx6ull-pinfunc.h": "c",
 		"chrono": "c",
-		"dt-structs.h": "c"
+		"dt-structs.h": "c",
+		"typeinfo": "c",
+		"random": "c",
+		"limits": "c",
+		"algorithm": "c",
+		"memory": "c",
+		"array": "c",
+		"string_view": "c",
+		"initializer_list": "c",
+		"utility": "c"
 	},
 	"search.followSymlinks": false,
 	"terminal.integrated.defaultProfile.linux": "bash",

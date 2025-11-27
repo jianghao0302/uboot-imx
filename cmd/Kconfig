@@ -2186,6 +2186,16 @@ config CMD_LED
 	  with led on/off/togle/blink. Any LED drivers can be controlled with
 	  this command, e.g. led_gpio.
 
+config CMD_BEEPER
+	bool "beeper"
+	depends on BEEPER
+	default y if BEEPER
+	help
+	  Enable the 'beeper' command which allows for control of beepers supported
+	  by the board. The beepers can be listed with 'beeper list' and controlled
+	  with beeper on/off/toggle. Any beeper drivers can be controlled with
+	  this command, e.g. beeper_gpio.
+
 config CMD_INI
 	bool "ini"
 	help

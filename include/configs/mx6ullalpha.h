@@ -98,7 +98,8 @@
 		"fi;\0 " \
 
 
-/* Miscellaneous configurable options */
+/** PWM */
+#define CFG_IMX6_PWM_PER_CLK 66000000
 
 /* Physical Memory Map */
 #define PHYS_SDRAM			MMDC0_ARB_BASE_ADDR
@@ -108,5 +109,7 @@
 #define CFG_SYS_INIT_RAM_SIZE	IRAM_SIZE
 
 /* environment organization */
+
+
 
 #endif

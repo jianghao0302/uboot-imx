@@ -7,7 +7,6 @@
 	bootph-all;
 	display0 = &lcdif;
 
-	spi0 = &qspi;
 	spi1 = &ecspi1;
 	spi2 = &ecspi2;
 	spi3 = &ecspi3;
