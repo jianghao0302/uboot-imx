@@ -3,10 +3,6 @@
 // Copyright (C) 2015 Freescale Semiconductor, Inc.
 
 / {
-	aliases {
-		spi5 = &{/spi-4};
-	};
-
 	chosen {
 		stdout-path = &uart1;
 	};
@@ -82,18 +78,6 @@
 			"RINPUT2", "AMIC",
 			"Mic Jack", "MICB",
 			"AMIC", "MICB";
-	};
-
-	spi-4 {
-		compatible = "spi-gpio";
-		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_spi4>;
-		status = "okay";
-		gpio-sck = <&gpio5 11 0>;
-		gpio-mosi = <&gpio5 10 0>;
-		num-chipselects = <1>;
-		#address-cells = <1>;
-		#size-cells = <0>;
 	};
 };
 
@@ -443,6 +427,51 @@
 		>;
 	};
 
+	// pinctrl_hdmi_dat: hdmidatgrp {
+	// 	fsl,pins = <
+	// 		MX6UL_PAD_LCD_DATA00__LCDIF_DATA00  0x49
+	// 		MX6UL_PAD_LCD_DATA01__LCDIF_DATA01  0x49
+	// 		MX6UL_PAD_LCD_DATA02__LCDIF_DATA02  0x49
+	// 		MX6UL_PAD_LCD_DATA03__LCDIF_DATA03  0x49
+	// 		MX6UL_PAD_LCD_DATA04__LCDIF_DATA04  0x49
+	// 		MX6UL_PAD_LCD_DATA05__LCDIF_DATA05  0x49
+	// 		MX6UL_PAD_LCD_DATA06__LCDIF_DATA06  0x49
+	// 		MX6UL_PAD_LCD_DATA07__LCDIF_DATA07  0x49
+	// 		MX6UL_PAD_LCD_DATA08__LCDIF_DATA08  0x49
+	// 		MX6UL_PAD_LCD_DATA09__LCDIF_DATA09  0x49
+	// 		MX6UL_PAD_LCD_DATA10__LCDIF_DATA10  0x49
+	// 		MX6UL_PAD_LCD_DATA11__LCDIF_DATA11  0x49
+	// 		MX6UL_PAD_LCD_DATA12__LCDIF_DATA12  0x49
+	// 		MX6UL_PAD_LCD_DATA13__LCDIF_DATA13  0x49
+	// 		MX6UL_PAD_LCD_DATA14__LCDIF_DATA14  0x49
+	// 		MX6UL_PAD_LCD_DATA15__LCDIF_DATA15  0x49
+	// 		MX6UL_PAD_LCD_DATA16__LCDIF_DATA16  0x49
+	// 		MX6UL_PAD_LCD_DATA17__LCDIF_DATA17  0x49
+	// 		MX6UL_PAD_LCD_DATA18__LCDIF_DATA18  0x49
+	// 		MX6UL_PAD_LCD_DATA19__LCDIF_DATA19  0x49
+	// 		MX6UL_PAD_LCD_DATA20__LCDIF_DATA20  0x49
+	// 		MX6UL_PAD_LCD_DATA21__LCDIF_DATA21  0x49
+	// 		MX6UL_PAD_LCD_DATA22__LCDIF_DATA22  0x49
+	// 		MX6UL_PAD_LCD_DATA23__LCDIF_DATA23  0x49
+	// 	>;
+	// };
+
+	// pinctrl_hdmi_ctrl: hdmictrlgrp {
+	// 	fsl,pins = <
+	// 		MX6UL_PAD_LCD_CLK__LCDIF_CLK 		0x49
+	// 		MX6UL_PAD_LCD_ENABLE__LCDIF_ENABLE 	0x49
+	// 		MX6UL_PAD_LCD_HSYNC__LCDIF_HSYNC 	0x49
+	// 		MX6UL_PAD_LCD_VSYNC__LCDIF_VSYNC    0x49
+	// 	>;
+	// };
+
+	/* SII902X INT */
+	// pinctrl_sii902x: hdmigrp-1 {
+	// 	fsl,pins = <
+	// 		MX6UL_PAD_GPIO1_IO09__GPIO1_IO09 	0x11
+	// 	>;
+	// };
+
 	pinctrl_peri_3v3: peri3v3grp {
 		fsl,pins = <
 			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0b0
@@ -467,13 +496,6 @@
 			MX6UL_PAD_UART2_RX_DATA__ECSPI3_SCLK 	0x10b1 			/* SCLK */
 			MX6UL_PAD_UART2_RTS_B__ECSPI3_MISO 		0x10b1 			/* MISO */
 			MX6UL_PAD_UART2_CTS_B__ECSPI3_MOSI 		0x10b1 			/* MOSI */
-		>;
-	};
-
-	pinctrl_spi4: spi4grp {
-		fsl,pins = <
-			MX6UL_PAD_BOOT_MODE0__GPIO5_IO10	0x70a1
-			MX6UL_PAD_BOOT_MODE1__GPIO5_IO11	0x70a1
 		>;
 	};
 
@@ -618,4 +640,14 @@
 			MX6UL_PAD_UART1_CTS_B__GPIO1_IO18 			0xf080 /* KEY0 */
 		>;
 	};
+};
+
+&iomuxc_snvs {
+	pinctrl-names = "default";
+
+	// ts_reset_hdmi_pin: ts_reset_hdmi_mux {
+	// 	fsl,pins = <
+	// 		MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09 		0x49
+	// 	>;
+	// };
 };
