@@ -118,7 +118,7 @@
 	status = "okay";
 
 	ap3216c@1e {
-		compatible = "ananov,ap3216c";
+		compatible = "liteon,ap3216c";
 		reg = <0x1e>;
 	};
 };
