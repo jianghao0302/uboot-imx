@@ -44,7 +44,7 @@
 		compatible = "gpio-beeper";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_beep>;
-		gpios = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+		gpios = <&gpio5 1 GPIO_ACTIVE_LOW>;
 		status = "okay";
 	};
 
