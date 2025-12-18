@@ -100,6 +100,7 @@
 	non-removable;
 	keep-power-in-suspend;
 	wakeup-source;
+	vmmc-supply = <&reg_sd2_vmmc>;
 	status = "okay";
 };
 
