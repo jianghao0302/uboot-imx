@@ -328,14 +328,6 @@
 		>;
 	};
 
-	/*enet1 reset */
-	pinctrl_enet1_reset: enet1resetgrp {
-		fsl,pins = <
-			/* used for enet1 reset */
-			MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07		0x10b0
-		>;
-	};
-
 	pinctrl_enet2: enet2grp {
 		fsl,pins = <
 			MX6UL_PAD_GPIO1_IO07__ENET2_MDC		0x1b0b0
@@ -348,14 +340,6 @@
 			MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b0b0
 			MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b0b0
 			MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b009
-		>;
-	};
-
-	/*enet2 reset */
-	pinctrl_enet2_reset: enet2resetgrp {
-		fsl,pins = <
-			/* used for enet2 reset */
-			MX6ULL_PAD_SNVS_TAMPER8__GPIO5_IO08		0x10b0
 		>;
 	};
 
@@ -383,12 +367,6 @@
 	pinctrl_tsc: tscgrp {
 		fsl,pins = <
 			MX6UL_PAD_GPIO1_IO09__GPIO1_IO09 			0xf080 /* TSC_INT */
-		>;
-	};
-
-	pinctrl_tsc_reset: tsc_reset {
-		fsl,pins = <
-			MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09 		0x10b0 /* TSC_RESET */
 		>;
 	};
 
@@ -437,7 +415,6 @@
 			MX6UL_PAD_JTAG_TRST_B__SAI2_TX_DATA	0x11088
 			MX6UL_PAD_JTAG_TCK__SAI2_RX_DATA	0x11088
 			MX6UL_PAD_JTAG_TMS__SAI2_MCLK		0x17088
-			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x17059
 		>;
 	};
 
@@ -627,13 +604,7 @@
 
 	pinctrl_gpio_leds: ledsgrp {
 		fsl,pins = <
-			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03 		0x10b0 /* LED0 */
-		>;
-	};
-
-	pinctrl_beep: beepgrp {
-		fsl,pins = <
-			MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01 		0x10b0 /* BEEP */
+			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03 	0xb0 /* LED0 */
 		>;
 	};
 
@@ -652,6 +623,41 @@
 
 &iomuxc_snvs {
 	pinctrl-names = "default";
+
+	pinctrl_beep: beepgrp {
+		fsl,pins = <
+			MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01 		0x10b0 /* BEEP */
+		>;
+	};
+
+	pinctrl_sai2_hp_det_b: sai2_hp_det_grp {
+		fsl,pins = <
+			MX6ULL_PAD_SNVS_TAMPER4__GPIO5_IO04 		0x17059 /* SAI2_HP_DET_B */
+		>;
+	};
+
+	/*enet1 reset */
+	pinctrl_enet1_reset: enet1resetgrp {
+		fsl,pins = <
+			/* used for enet1 reset */
+			MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07		0x10b0
+		>;
+	};
+
+	/*enet2 reset */
+	pinctrl_enet2_reset: enet2resetgrp {
+		fsl,pins = <
+			/* used for enet2 reset */
+			MX6ULL_PAD_SNVS_TAMPER8__GPIO5_IO08		0x10b0
+		>;
+	};
+
+	pinctrl_tsc_reset: tsc_reset {
+		fsl,pins = <
+			MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09 		0x10b0 /* TSC_RESET */
+		>;
+	};
+
 
 	// ts_reset_hdmi_pin: ts_reset_hdmi_mux {
 	// 	fsl,pins = <
