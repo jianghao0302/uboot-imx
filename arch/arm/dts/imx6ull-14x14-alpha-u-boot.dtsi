@@ -24,3 +24,7 @@
 &iomuxc {
 	bootph-all;
 };
+
+&pinctrl_uart1 {
+	bootph-all;
+};
