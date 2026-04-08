@@ -1,0 +1,21 @@
+menu "Beeper Support"
+
+config BEEPER
+	bool "Enable Beeper support"
+	depends on DM
+	help
+	  Many boards have LEDs which can be used to signal status or alerts.
+	  U-Boot provides a uclass API to implement this feature. LED drivers
+	  can provide access to board-specific LEDs. Use of the device tree
+	  for configuration is encouraged.
+
+config BEEPER_GPIO
+	bool "Beeper support for GPIO-connected beepers"
+	depends on BEEPER && DM_GPIO
+	help
+	  Enable support for beepers which are connected to GPIO lines. These
+	  GPIOs may be on the SoC or some other device which provides GPIOs.
+	  The GPIO driver must used driver model. Beepers are configured using
+	  the device tree.
+
+endmenu
