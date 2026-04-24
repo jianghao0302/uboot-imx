@@ -258,6 +258,14 @@ int board_late_init(void)
 	add_board_boot_modes(board_boot_modes);
 #endif
 
+	/*
+	 * If the environment CRC is invalid (e.g. first boot after flashing),
+	 * save the default environment so subsequent boots won't print the
+	 * "*** Warning - bad CRC, using default environment" message.
+	 */
+	if (gd->env_valid == ENV_INVALID)
+		env_save();
+
 	env_set("tee", "no");
 #ifdef CONFIG_IMX_OPTEE
 	env_set("tee", "yes");
